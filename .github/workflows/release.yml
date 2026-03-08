@@ -33,13 +33,12 @@ jobs:
 
       - name: Create release archive
         run: |
-          cd dist
-          zip -r ../monologue-token.zip .
+          mv dist monologue-token
+          zip -r monologue-token.zip monologue-token
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
             monologue-token.zip
-            dist/module.json
-          generate_release_notes: true
+            monologue-token/module.json
