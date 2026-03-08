@@ -1,0 +1,22 @@
+{
+  "id": "monologue-token",
+  "title": "Monologue Token",
+  "description": "A clickable token overlay that prompts a player to share what their character is thinking.",
+  "version": "#{VERSION}#",
+  "authors": [
+    {
+      "name": "fronix"
+    }
+  ],
+  "compatibility": {
+    "minimum": "12",
+    "verified": "13",
+    "maximum": "13"
+  },
+  "esmodules": ["module.js"],
+  "styles": ["styles/monologue-token.css"],
+  "socket": true,
+  "url": "https://github.com/fronix/monologue-token",
+  "manifest": "https://github.com/fronix/monologue-token/releases/latest/download/module.json",
+  "download": "https://github.com/fronix/monologue-token/releases/download/#{VERSION}#/monologue-token.zip"
+}

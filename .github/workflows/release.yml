@@ -1,0 +1,45 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm build
+
+      - name: Set version in module.json
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          sed -i "s/#{VERSION}#/$VERSION/g" dist/module.json
+
+      - name: Create release archive
+        run: |
+          cd dist
+          zip -r ../monologue-token.zip .
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            monologue-token.zip
+            dist/module.json
+          generate_release_notes: true

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#4a3080"/>
+      <stop offset="100%" stop-color="#1a1040"/>
+    </radialGradient>
+  </defs>
+  <circle cx="100" cy="100" r="98" fill="url(#bg)" stroke="#ffd700" stroke-width="3"/>
+  <text x="100" y="80" text-anchor="middle" font-size="48" fill="#ffd700" font-family="serif">💭</text>
+  <text x="100" y="140" text-anchor="middle" font-size="16" fill="#ddd" font-family="sans-serif" font-weight="bold">MONOLOGUE</text>
+</svg>
